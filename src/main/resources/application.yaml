@@ -1,0 +1,34 @@
+logging.level:
+  org.springframework.jdbc: debug
+  org.springframework.web: debug
+  com.broadcom.springconsulting: debug
+
+spring:
+  application:
+    name: db-exerciser
+
+management:
+
+  endpoints:
+    web.exposure.include: '*'
+
+  endpoint:
+    health:
+      show-details: ALWAYS
+      group:
+        liveness:
+          show-details: always
+        readiness:
+          show-details: always
+
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http:
+          server:
+            requests: true
+
+  tracing:
+    enabled: false
+    sampling:
+      probability: 1.0
