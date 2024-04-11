@@ -5,7 +5,7 @@ databaseChangeLog:
       author: test
       changes:
         - createTable:
-            tableName: time-log
+            tableName: TIME_LOG
             columns:
               - column:
                   name: id
