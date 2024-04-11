@@ -7,14 +7,16 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Objects;
 
-@Table( name = "TIME-LOG" )
+@Table( name = "TIME_LOG" )
 class TimeLog {
 
     @Id
     String id;
     Timestamp time;
 
-    TimeLog(final String id, final Instant time ) {
+    public TimeLog() {}
+
+    public TimeLog(final String id, final Instant time ) {
         this.id = id;
         this.time = Timestamp.from( time );
     }

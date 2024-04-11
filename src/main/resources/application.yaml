@@ -7,8 +7,10 @@ spring:
   application:
     name: db-exerciser
   datasource:
-    url: ${DATABASE_URL}
-
+    driverClassName: org.postgresql.Driver
+    password: ${PASSWORD}
+    url: ${SVC}
+    username: ${USERNAME}
 management:
 
   endpoints:
