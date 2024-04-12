@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Objects;
 
-@Table( name = "TIME_LOG" )
+@Table( name = "TIME_LOG")
 class TimeLog {
 
     @Id

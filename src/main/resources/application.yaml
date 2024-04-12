@@ -7,10 +7,13 @@ spring:
   application:
     name: db-exerciser
   datasource:
-    driverClassName: org.postgresql.Driver
-    password: ${PASSWORD}
-    url: ${SVC}
-    username: ${USERNAME}
+    # driverClassName: org.postgresql.Driver
+    # password: ${PASSWORD}
+    # url: ${SVC}
+    # username: ${USERNAME}
+    hikari:
+      schema: public
+      
 management:
 
   endpoints:
