@@ -1,5 +1,6 @@
 package com.broadcom.springconsulting.dbexerciser;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.UUID;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-interface TimeRepository extends CrudRepository<TimeLog, String> { }
+interface TimeRepository extends JpaRepository<TimeLog, UUID> { }

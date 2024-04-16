@@ -1,57 +1,38 @@
 package com.broadcom.springconsulting.dbexerciser;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+//import org.springframework.data.annotation.Id;
+//import org.springframework.data.relational.core.mapping.Table;
 
 import java.sql.Timestamp;
-import java.time.Instant;
-import java.util.Objects;
+import java.util.UUID;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-@Table( name = "TIME_LOG")
+@Entity
 class TimeLog {
 
     @Id
-    String id;
+    UUID id;
     Timestamp time;
 
-    public TimeLog() {}
-
-    public TimeLog(final String id, final Instant time ) {
-        this.id = id;
-        this.time = Timestamp.from( time );
+    public TimeLog() {
+        this.id = UUID.randomUUID();
+        this.time = new Timestamp(System.currentTimeMillis());
     }
 
-    String getId() {
-
+    public UUID getId() {
         return id;
     }
-
-    Instant getTime() {
-
-        return this.time.toInstant();
+    public void setId(UUID id) {
+        this.id = id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if( this == o ) return true;
-        if( o == null || getClass() != o.getClass() ) return false;
-
-        TimeLog timeLog = (TimeLog) o;
-        return Objects.equals(id, timeLog.id) && Objects.equals( time, timeLog.time );
+    public Timestamp getTime() {
+        return time;
+    }
+    public void setTime(Timestamp ts) {
+        this.time = ts;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, time);
-    }
-
-    @Override
-    public String toString() {
-
-        return "TimeLog{" +
-                "id='" + id + '\'' +
-                ", time=" + time +
-                '}';
-    }
 
 }

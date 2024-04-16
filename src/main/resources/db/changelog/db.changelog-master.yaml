@@ -1,7 +1,20 @@
 databaseChangeLog:
-
+  #- changeSet:
+  #    id: 1
+  #    author: test
+  #    changes:
+  #    - sql:
+  #      dbms: 'all'
+  #      sql: 'create schema if not exists public;' 
+  #- changeSet:
+  #    id: 2
+  #    author: test
+  #    changes:
+  #    - sql:
+  #      dbms: 'h2, !postgresql'
+  #      sql: 'use schema public;'
   - changeSet:
-      id: 1
+      id: 3
       author: test
       objectQuotingStrategy: LEGACY
       changes:

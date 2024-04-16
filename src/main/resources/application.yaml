@@ -11,8 +11,11 @@ spring:
     # password: ${PASSWORD}
     # url: ${SVC}
     # username: ${USERNAME}
-    hikari:
-      schema: public
+   # hikari:
+   #  schema: public
+  liquibase:
+    default-schema: public
+
       
 management:
 

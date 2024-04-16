@@ -6,8 +6,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.time.Instant;
-
 @Component
 @EnableScheduling
 public class ScheduledTasks {
@@ -25,10 +23,7 @@ public class ScheduledTasks {
     @Scheduled( fixedRate = 5000 )
     public void recordCurrentTime() {
         log.debug( "recordCurrentTime : enter" );
-
-        var now =  Instant.now();
-
-        var timeLog = new TimeLog( null, now );
+        var timeLog = new TimeLog();
         this.timeRepository.save( timeLog );
         log.info( "recordCurrentTime : recording current time-log [{}]", timeLog );
 
